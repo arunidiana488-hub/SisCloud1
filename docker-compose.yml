@@ -1,0 +1,10 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: siscloud_postgres
+    environment:
+      POSTGRES_DB: siscloud
+      POSTGRES_USER: siscloud_user
+      POSTGRES_PASSWORD: siscloud_pass
+    ports:
+      - "5432:5432"
