@@ -15,6 +15,7 @@ import AdminDashboard from "./pages/AdminDashboard";
 // Módulos
 import Users from "./pages/Users";
 import Academic from "./pages/Academic";
+import SeguimientoModule from "./modules/seguimiento/index";
 
 
 
@@ -87,6 +88,16 @@ function App() {
         <Route
           path="/academic"
           element={<Academic />}
+        />
+
+
+
+        {/* Módulo 3:
+            Seguimiento - Gestión de Proyectos Académicos */}
+
+        <Route
+          path="/seguimiento/*"
+          element={<SeguimientoModule />}
         />
 
 

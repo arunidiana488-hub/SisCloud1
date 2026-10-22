@@ -1,0 +1,8 @@
+# Override SOLO para el módulo de seguimiento. No modifica docker-compose.yml.
+# Uso: docker compose -f docker-compose.yml -f docker-compose.seguimiento.yml up -d
+services:
+  postgres:
+    volumes:
+      - ./database/init.sql:/docker-entrypoint-initdb.d/01-init.sql:ro
+      - ./database/migrations/001_seguimiento_proyectos.sql:/docker-entrypoint-initdb.d/02-seguimiento.sql:ro
+      - ./database/migrations/002_seed_demo_seguimiento.sql:/docker-entrypoint-initdb.d/03-seed-demo.sql:ro

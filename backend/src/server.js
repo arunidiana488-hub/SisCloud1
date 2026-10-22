@@ -1,1 +1,2 @@
-import express from 'express';import cors from 'cors';const app=express();app.use(cors());app.get('/',(r,s)=>s.json({sistema:'SISCloud API'}));app.listen(4000);
+import seguimiento from './modules/seguimiento/index.js';
+import express from 'express';import cors from 'cors';const app=express();app.use(cors());app.get('/',(r,s)=>s.json({sistema:'SISCloud API'}));app.use('/api/seguimiento', seguimiento);app.listen(4000);
